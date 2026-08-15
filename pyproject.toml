@@ -1,0 +1,33 @@
+[project]
+name = "billgpt"
+version = "0.1.0"
+description = "BillGPT Backend"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.pyrefly]
+python-interpreter-path = "backend/venv/Scripts/python.exe"
+site-package-path = [
+    "backend/venv/Lib/site-packages"
+]
+search-path = [
+    ".",
+    "backend"
+]
+extra-search-paths = [
+    "backend/venv/Lib/site-packages"
+]
+project-excludes = [
+    "**/.[!/.]*",
+    "**/*venv/**",
+    "**/__pycache__/**",
+    "**/_pyrefly_virtual_/**",
+    "**/.pytest_cache/**",
+    "**/frontend/**"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".",
+    "backend"
+]
