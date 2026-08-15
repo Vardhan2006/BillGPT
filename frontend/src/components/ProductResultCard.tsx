@@ -19,13 +19,18 @@ export const ProductResultCard: React.FC<ProductResultCardProps> = ({
   const minPrice = deals.length > 0 ? Math.min(...deals.map((d) => d.price)) : product.base_price;
 
   return (
-    <div className="product-result-card">
+    <article className="product-result-card">
       <div className="product-card-header">
         <div className="product-info-col">
-          {product.category && (
-            <span className="product-category-chip">{product.category}</span>
-          )}
+          <div className="product-badge-row">
+            {product.category && (
+              <span className="product-category-chip">{product.category}</span>
+            )}
+            <span className="product-deals-count-chip">{deals.length} deals compared</span>
+          </div>
+
           <h2 className="product-title">{product.name}</h2>
+          
           {product.description && (
             <p className="product-desc">{product.description}</p>
           )}
@@ -39,9 +44,10 @@ export const ProductResultCard: React.FC<ProductResultCardProps> = ({
 
       {/* Competing Deals Section */}
       <div className="deals-section">
-        <h3 className="section-subtitle">
-          <span>Competing Merchant Deals ({deals.length})</span>
-        </h3>
+        <div className="section-subtitle-row">
+          <h3 className="section-subtitle">Competing Merchant Sources</h3>
+          <span className="deals-hint">Ranked lowest to highest</span>
+        </div>
 
         <div className="deals-list">
           {deals.map((deal) => {
@@ -93,6 +99,6 @@ export const ProductResultCard: React.FC<ProductResultCardProps> = ({
         onSave={() => onSaveComparison(result)}
         isSaved={isSaved}
       />
-    </div>
+    </article>
   );
 };
