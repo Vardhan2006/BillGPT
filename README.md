@@ -287,8 +287,3 @@ The frontend UI is tested and verified across standard device viewports:
 - **Tablet Landscape**: 1024 × 768
 - **Tablet Portrait**: 768 × 1024
 - **Mobile**: 390 × 844 (iPhone 14/15) & 375 × 667 (iPhone SE)
-
----
-
-## 📄 License
-MIT License. Built for the BillGPT Take-Home Assessment.
